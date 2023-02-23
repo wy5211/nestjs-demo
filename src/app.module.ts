@@ -33,5 +33,6 @@ import { PostsEntity } from './posts/posts.entity';
   ],
   controllers: [AppController],
   providers: [AppService],
+  exports: [],
 })
 export class AppModule {}
