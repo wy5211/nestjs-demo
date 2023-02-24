@@ -20,7 +20,7 @@ export class PostsController {
   @ApiOperation({ summary: '创建文章' })
   @Post()
   async create(@Body() post: CreatePostDto) {
-    console.log(post);
+    // console.log(post);
     const { createTime, updateTime, ...rest } = post;
     return await this.postsService.create({
       ...rest,

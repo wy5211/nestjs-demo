@@ -6,17 +6,20 @@ import {
   HttpCode,
   Param,
   Post,
-  Query,
-  Redirect,
-  Req,
 } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { AppService } from './app.service';
 
 @ApiTags('首页')
 @Controller({ host: 'localhost' })
 export class AppController {
   constructor(private readonly appService: AppService) {}
+
+  @Get()
+  @ApiOperation({ description: '首页-get' })
+  getHome() {
+    return this.appService.getHello();
+  }
 
   @HttpCode(201)
   @Header('Cache-Control', 'none')
@@ -27,6 +30,7 @@ export class AppController {
   }
 
   @Post()
+  @ApiOperation({ description: '首页-post' })
   post(@Body() body) {
     console.log('body', body);
     return this.appService.getHello();

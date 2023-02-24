@@ -16,7 +16,7 @@ export class CreatePostDto {
   @ApiPropertyOptional({ description: '文章封面' })
   readonly cover_url: string;
 
-  @IsNumber()
+  @IsNumber(undefined, { message: '文章类型为Number' })
   @ApiProperty({ description: '文章类型' })
   readonly type: number;
 
