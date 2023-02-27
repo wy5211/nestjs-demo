@@ -17,6 +17,7 @@ async function bootstrap() {
 
   app.setGlobalPrefix('api');
 
+  // NestJS 中的 ValidationPipe 是一个预先定义的管道，用于验证传入的请求正文体（request body）、查询参数（query parameter）、路由参数（route parameter）等数据的有效性。它能够自动检查输入数据是否符合指定的验证规则，并在数据无效时返回具体的错误信息，从而大大简化了开发者的工作。
   app.useGlobalPipes(new ValidationPipe());
 
   // 设置swagger文档
