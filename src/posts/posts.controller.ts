@@ -24,8 +24,8 @@ export class PostsController {
     const { createTime, updateTime, ...rest } = post;
     return await this.postsService.create({
       ...rest,
-      create_time: createTime ? new Date(createTime) : new Date(),
-      update_time: updateTime ? new Date(updateTime) : null,
+      createTime: createTime ? new Date(createTime) : new Date(),
+      updateTime: updateTime ? new Date(updateTime) : null,
     });
   }
 

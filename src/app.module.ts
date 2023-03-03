@@ -7,6 +7,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PostsModule } from './posts/posts.module';
 import { PostsEntity } from './posts/posts.entity';
+import { UploadModule } from './upload/upload.module';
 
 @Module({
   imports: [
@@ -32,6 +33,7 @@ import { PostsEntity } from './posts/posts.entity';
       }),
     }),
     PostsModule,
+    UploadModule,
   ],
   controllers: [AppController],
   providers: [AppService],

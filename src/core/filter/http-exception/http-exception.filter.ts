@@ -17,14 +17,15 @@ export class HttpExceptionFilter implements ExceptionFilter {
     // 获取异常状态码
     const status = exception.getStatus();
 
-    // 设置错误信息
-    const errMsg = (exception.getResponse() as any)?.message?.[0];
+    console.log('exception.getResponse() ==> ', exception.getResponse());
 
-    const message = errMsg ?? '发生了一点错误，请稍后再试';
+    const errMsg =
+      (exception.getResponse() as any)?.message?.[0] ||
+      '发生了一点错误，请稍后再试';
 
     const errorResponse = {
       data: null,
-      message,
+      message: errMsg,
       code: status,
       success: false,
     };

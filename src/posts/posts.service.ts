@@ -20,13 +20,13 @@ export class PostsService {
     const { title } = post;
 
     if (!title) {
-      throw new HttpException({ message: ['缺少标题'] }, 401);
+      throw new HttpException('缺少标题', 401);
     }
 
     const doc = await this.postsRepository.findOne({ where: { title } });
 
     if (doc) {
-      throw new HttpException({ message: ['文章已存在'] }, 401);
+      throw new HttpException('文章已存在', 401);
     }
 
     const res = await this.postsRepository.save(post);

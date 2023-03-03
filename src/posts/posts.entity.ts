@@ -20,9 +20,9 @@ export class PostsEntity {
   @Column('tinyint')
   type: number;
 
-  @Column({ type: 'timestamp', default: null })
-  create_time: Date;
+  @Column({ type: 'timestamp', default: null, name: 'create_time' })
+  createTime: Date;
 
-  @Column({ type: 'timestamp', default: null })
-  update_time: Date;
+  @Column({ type: 'timestamp', default: null, name: 'update_time' })
+  updateTime: Date;
 }
